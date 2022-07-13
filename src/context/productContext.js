@@ -89,20 +89,20 @@ const ProductsProvider = ({children}) => {
          return items; 
      }
 
-
+     function getData(items){
+        const sortedData = sortData(items);
+        const brandedData = brandData(sortedData);
+        const genderFilteredData = genderFilterData(brandedData);
+        const filteredData = getDataBySize(genderFilteredData);
+        setData(filteredData);
+    }
     
 
 
     useEffect(() => {
-        function getData(items){
-            const sortedData = sortData(items);
-            const brandedData = brandData(sortedData);
-            const genderFilteredData = genderFilterData(brandedData);
-            const filteredData = getDataBySize(genderFilteredData);
-            setData(filteredData);
-        }
         getData(data);
     },[state]);
+    
     return (<productContext.Provider value={{state , dispatch , data , setData}}>{children}</productContext.Provider>)
 }
 
