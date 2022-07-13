@@ -1,0 +1,33 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: #2874f0;
+    color: white;
+    height: 4rem;
+
+}
+
+.btns{
+    display: flex;
+    gap: 1rem 1rem;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.searchInput{
+    width: 20rem;
+}
+
+.brand-icon{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+

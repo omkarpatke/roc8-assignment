@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
+:root{
+    --primary-color: #1a406b;
+    --white-color : #fff;
+    --black-color : black;
+    --container-bg-color : #f2f2f2;
+    --facebook-bg-color :  #3b5998;
+    --twitter-bg-color :  #00acee;
+    --linkedin-bg-color :  #0e76a8;
+    --gray-bg-color : #ebebeb;
+    --gray-bg-dark-color : #c4c4c4;
+    --google-bg-color:#4285f4;
+}
+.main-container{
+    display: flex;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.productlisting{
+    width: 100%;
+    padding: 1rem 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.products-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1.5rem 1.5rem;
+    padding: 0rem 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.product{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white-color);
+    padding: 1rem;
+    max-width: 20rem;
+    min-height: 15rem;
+    max-height: auto;
+    border: 1px solid;
+    text-align: initial;
 }
 
-.App-link {
-  color: #61dafb;
+.product-img{
+    width:  100%;
+    margin-top: 1rem;
+    object-fit: cover;
+    transition: all .2s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product-img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#product-wishlist-icon{
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.product-desc{
+    font-size: 1.4rem;
+    margin: 1rem 0 .5rem 0;
+    font-weight: 600;
+}
+
+.product-price{
+    margin-bottom: 1rem;
+}
+
+.product-rating{
+    margin-left: 7rem;
+    border-radius: 8px;
+    background: var(--green-color);
+    color: var(--white-color);
+    padding: 2px 5px;
+    cursor: pointer;
+}
+
+.product-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.product-btn{
+    padding: .5rem .7rem;
+    text-decoration: none;
+    background: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 10px;
+    transition: .5s all ease-in-out;
+}
+
+.product-btn:hover{
+    cursor: pointer;
+    background-color: var(--white-color);
 }
