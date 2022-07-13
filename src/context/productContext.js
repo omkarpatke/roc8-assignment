@@ -59,18 +59,18 @@ const ProductsProvider = ({children}) => {
 
     const brandData = (items) => {
         if(state.type === 'MACH_CITY'){
-         return [...items.filter(item => item.brand == 'mach city' )]
+         return [...items.filter(item => item.brand === 'mach city' )]
         }else if(state.type === 'HERCULES'){
-         return [...items.filter(item => item.brand == 'hercules' )]
+         return [...items.filter(item => item.brand === 'hercules' )]
         }
          return items; 
      }
 
      const genderFilterData = (items) => {
         if(state.type === 'MALE'){
-          return [...items.filter(item => item.gender == 'male')]
+          return [...items.filter(item => item.gender === 'male')]
         }else if(state.type === 'FEMALE'){
-            return [...items.filter(item => item.gender == 'female')]
+            return [...items.filter(item => item.gender ==='female')]
         }else{
           return items;
       }
@@ -78,13 +78,13 @@ const ProductsProvider = ({children}) => {
 
     const getDataBySize = (items) => {
         if(state.type === 'TWENTY'){
-         return [...items.filter(item => item.size == '20' )]
+         return [...items.filter(item => item.size === '20' )]
         }else if(state.type === 'TWENTY_TWO'){
-         return [...items.filter(item => item.size == '22' )]
+         return [...items.filter(item => item.size === '22' )]
         }else if(state.type === 'TWENTY_FOUR'){
-            return [...items.filter(item => item.size == '24' )]
+            return [...items.filter(item => item.size === '24' )]
         }else if(state.type === 'TWENTY_SIX'){
-            return [...items.filter(item => item.size == '26' )]
+            return [...items.filter(item => item.size === '26' )]
         }
          return items; 
      }
@@ -104,7 +104,7 @@ const ProductsProvider = ({children}) => {
 
     useEffect(() => {
         getData(data);
-    },[state]);
+    },[state , data , getData]);
     return (<productContext.Provider value={{state , dispatch , data , setData}}>{children}</productContext.Provider>)
 }
 
