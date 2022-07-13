@@ -94,16 +94,17 @@ const ProductsProvider = ({children}) => {
         const brandedData = brandData(sortedData);
         const genderFilteredData = genderFilterData(brandedData);
         const filteredData = getDataBySize(genderFilteredData);
-        setData(filteredData)
-    }
-    
+        return filteredData;
+     } 
 
+     const filterData = getData(data);
 
     useEffect(() => {
-        getData(products);
-    },[state , products]);
+        setData(filterData)
+    }, [state , setData])
     
-    return (<productContext.Provider value={{state , dispatch , data , setData}}>{children}</productContext.Provider>)
+    
+    return (<productContext.Provider value={{state , dispatch , data , setData ,getData}}>{children}</productContext.Provider>)
 }
 
 export { useProducts , ProductsProvider}
