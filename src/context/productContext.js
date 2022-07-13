@@ -1,4 +1,4 @@
-import React , { createContext , useContext , useReducer , useState , useEffect} from 'react';
+import React , { createContext , useContext , useReducer , useState } from 'react';
 import products from '../data.json';
 
 const productContext = createContext();
