@@ -6,7 +6,7 @@ import { useProducts } from './context/productContext';
 
 
 function App() {
-  const { data } = useProducts();
+  const { filterData } = useProducts();
 
   return (
     <div className="App">
@@ -14,7 +14,7 @@ function App() {
       <div className="main-container">
         <Sidebar />
         <div className="productlisting">
-        {data && data.map((product) => (
+        {filterData && filterData.map((product) => (
               <div className="product" key={product._id}>
                 <i className='lni lni-heart' id="product-wishlist-icon"></i>
                 <div to={`/products/${product._id}`}><img className="product-img" src={product.img} alt="cycle-img"/></div>

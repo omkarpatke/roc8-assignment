@@ -41,6 +41,9 @@ const ProductsProvider = ({children}) => {
               case 'TWENTY_SIX':
               return {...accu ,type:action.type, payload:action.payload}
 
+              case 'ALL_DATA':
+                return {...accu , type: action.type , payload:action.payload}
+
             default:
                 return state
         }
@@ -49,7 +52,9 @@ const ProductsProvider = ({children}) => {
     const [state , dispatch] = useReducer(productsReducer , {type:'' , payload:''});
     
     const sortData = (items) => {
-       if(state.type === 'HIGH_TO_LOW'){
+        if(state.type === 'ALL_DATA'){
+            return [...items];
+        }else if(state.type === 'HIGH_TO_LOW'){
         return [...items.sort((a,b) => b.price - a.price)]
        }else if(state.type === 'LOW_TO_HIGH'){
         return [...items.sort((a,b) => a.price - b.price)]
@@ -97,14 +102,10 @@ const ProductsProvider = ({children}) => {
         return filteredData;
      } 
 
-     const filterData = getData(data);
+     let filterData = getData(data);
 
-    useEffect(() => {
-        setData(filterData)
-    }, [state , setData])
     
-    
-    return (<productContext.Provider value={{state , dispatch , data , setData ,getData}}>{children}</productContext.Provider>)
+    return (<productContext.Provider value={{state , dispatch , data , setData ,getData ,filterData}}>{children}</productContext.Provider>)
 }
 
 export { useProducts , ProductsProvider}

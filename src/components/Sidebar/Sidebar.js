@@ -1,10 +1,9 @@
 import React , { useState } from 'react';
 import { useProducts } from '../../context/productContext';
 import './Sidebar.css';
-import data from '../../data.json';
 
 export default function Sidebar() {
-  const { dispatch , setData} = useProducts();
+  const { dispatch } = useProducts();
   const [ inputState, setInputState] = useState({
     HighToLow:false,
     LowToHigh:false,
@@ -30,8 +29,8 @@ export default function Sidebar() {
     TwentyTwo:false,
     TwentyFour:false,
     TwentySix:false,
-    });
-    setData(data)
+    })
+    dispatch({type:'ALL_DATA' , payload:'ALL_DATA'});
   }
 
 
