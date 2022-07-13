@@ -9,7 +9,7 @@ const ProductsProvider = ({children}) => {
     const [data , setData] = useState(products);
 
     const productsReducer = (accu , action) => {
-        console.log(action)
+        
         switch(action.type){
             case 'HIGH_TO_LOW':
               return {...accu ,type:action.type, payload:action.payload}
@@ -94,14 +94,14 @@ const ProductsProvider = ({children}) => {
         const brandedData = brandData(sortedData);
         const genderFilteredData = genderFilterData(brandedData);
         const filteredData = getDataBySize(genderFilteredData);
-        setData(filteredData);
+        setData(filteredData)
     }
     
 
 
     useEffect(() => {
-        getData(data);
-    },[state]);
+        getData(products);
+    },[state , products]);
     
     return (<productContext.Provider value={{state , dispatch , data , setData}}>{children}</productContext.Provider>)
 }
