@@ -102,7 +102,7 @@ const ProductsProvider = ({children}) => {
             setData(filteredData);
         }
         getData(data);
-    },[state , data]);
+    },[state]);
     return (<productContext.Provider value={{state , dispatch , data , setData}}>{children}</productContext.Provider>)
 }
 
